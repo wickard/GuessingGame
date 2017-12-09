@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="app">
+            <div id="header" class="center">
+                <h1>Guessing Game!</h1>
+                <h2>Guess a number between 1 and 100</h2>
+            </div>
+            <div id="main">
+                <div id="input-parent" class="center">
+                    <input id='player-input' class='center' placeholder="#" maxlength="3" autofocus="autofocus">
+                    <button id='submit' class="btn btn-primary">GO!</button>
+                </div>
+                <div id="guesses" class="center">
+                    <ul>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                        <li>-</li>
+                    </ul>
+                </div>
+                <div id="menu-btns" class="center">
+                    <button class="btn btn-warning">Reset</button>
+                    <button class ="btn btn-info">Hint</button>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="center">
+            <div class="row">
+                <div class="col-sm-4"><img src="faLogo.png" alt="Full Stack Acedemy Logo"></div>
+                <div class="col-sm-4"><h4>Page by Joshua Carlson</h4></div>
+                <div class="col-sm-4"><img src="graceLogo.png" alt="Grace Hopper Logo"></div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
