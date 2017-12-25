@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Guessing Game</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Spicy+Rice" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -31,9 +34,19 @@
                     </ul>
                 </div>
                 <div id="menu-btns" class="center">
-                    <button class="btn btn-warning">Reset</button>
-                    <button class ="btn btn-info">Hint</button>
+                    <button id="reset" class="btn btn-warning">Reset</button>
+                    <button id="hint" class ="btn btn-info">Hint</button>
                 </div>
+            </div>
+            <div id="penguinBubble">
+                <img src="chatBubbleR.png" alt="" id="rightChat"> 
+                <div id="textboxR"></div>
+                <img src="penguin.png" alt="" id="penguin">
+            </div>
+            <div id="dragonBubble">
+                <div id="textboxL"></div>
+                <img src="chatBubble.png" alt="" id="leftChat">
+                <img src="dragon.gif" alt="" id="dragon">
             </div>
         </div>
         <div id="footer" class="center">

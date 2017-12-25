@@ -7,10 +7,10 @@ ul{
     padding: 0;
 }
 
-img{
+#footer img{
     display: inline;
-    width: 200px;
-    height: 100px;
+    width: 250px;
+    height: 80px;
 }
 
 #footer{
@@ -23,7 +23,7 @@ img{
 
 
 #guesses li{
-    font-size: 60px;
+    font-size: 40px;
     padding: 0 20px;
     display: inline;
     border: 1px solid white;
@@ -66,9 +66,79 @@ input:focus{
 #wrapper{
     height: 100vh;
     background: url(bluebg.jpg);
+    z-index: -1;
 }
 
 #header{
-    color: rgb(245, 231, 231);
+    color: whitesmoke;
+    font-family: 'Spicy Rice', cursive;
 }
+
+#penguin{
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    height: 150px;
+    width: 150px;
+}
+
+#dragon{
+    position: fixed;
+    bottom: 90px;
+    left: 30px;
+    height: 170px;
+    width: 170px;
+}
+
+#leftChat{
+    display: none;
+    position: fixed;
+    bottom: 200px;
+    left: 140px;
+    height: 220px;
+    width: 300px;
+    z-index: 1;
+}
+
+#textboxL{
+    display: none;
+    font-family: 'Spicy Rice', cursive;
+    font-size: 20px;
+    color: rgb(223, 53, 53);
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 300px;
+    left: 190px;
+    height: 100px;
+    width: 180px;
+    z-index: 2; 
+}
+
+#rightChat{
+    display: none;
+    position: fixed;
+    bottom: 200px;
+    right: 120px;
+    height: 220px;
+    width: 300px;
+    z-index: 1;
+}
+
+#textboxR{
+    font-family: 'Spicy Rice', cursive;
+    font-size: 20px;
+    color: rgb(43, 78, 196);
+    display: none;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 300px;
+    right: 170px;
+    height: 100px;
+    width: 180px;
+    z-index: 2; 
+}
+
+
 

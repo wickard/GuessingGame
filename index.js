@@ -67,7 +67,10 @@ Game.prototype.checkGuess = function(){
 
 function newGame(){
     return new Game();
+
 }
+
+
 
 
 Game.prototype.provideHint = function (){
@@ -78,17 +81,78 @@ Game.prototype.provideHint = function (){
     return shuffle(hintArray);
 }
 
-// Version removes duplicate possibilty from hintArray but breaks testem.
 
-// Game.prototype.provideHint = function (){
-//     var hintArray = [this.winningNumber];
-//     var hint = generateWinningNumber();
-//     for(var i = 0; i < 2; i++){
-//         while(hintArray.includes(hint)){
-//             hint = generateWinningNumber();
-//         }
-//         hintArray.push(hint)
-//     }
-//     return shuffle(hintArray);
-// }
+//// jQuery /////////
 
+$(function(){
+    var game = newGame();
+    function disabled(bool){
+        $('#submit').prop('disabled', bool);
+        $('#hint').prop('disabled', bool);
+    }
+    function penguin(message){
+        $('#textboxR').html(message)
+        $('#rightChat').fadeIn(1200).delay(2000).fadeOut(1200);
+        $('#textboxR').fadeIn(1250).delay(1950).fadeOut(1200);
+    }
+    function dragon(message){
+        $('#textboxL').html(message)
+        $('#leftChat').fadeIn(1200).delay(2000).fadeOut(1200);
+        $('#textboxL').fadeIn(1250).delay(1950).fadeOut(1200);
+    }
+    function submit(){
+        var guess = game.playersGuessSubmission($('#player-input').val())
+        $('#player-input').val("")
+        if(guess !== "You have already guessed that number."){
+            $('li').each(function(){
+                if($(this).text() === '-'){
+                    $(this).text(game.playersGuess);
+                    return false;
+                }
+            })
+        }
+        
+        if(Number(game.difference()) >= 25){
+            if(guess === "You Lose."){
+                penguin(guess + " Press the reset button to play again!");
+                disabled(true);
+            }
+            else if(game.isLower()){
+                penguin(guess + " Guess higher!")
+            }
+            else penguin(guess + " Guess lower!")
+        }
+        else{
+            if(guess === "You Lose."){
+                dragon(guess + " Press the reset button to play again!");
+                disabled(true);
+            }
+            else if(game.isLower()){
+                dragon(guess + " Guess higher!")
+            }
+            else dragon(guess + " Guess lower!")
+        }
+        
+    }
+    
+    $('#submit').on('click', submit);
+    
+    $('#player-input').on('keypress', function(event){
+        if(event.which === 13){
+            submit();
+        }
+    })
+
+    $('#reset').on('click', function(){
+        game = newGame();
+        $('li').each(function(){
+            $(this).text('-');
+        })
+        disabled(false)
+    })
+
+    $('#hint').on('click', function(){
+        dragon("Pick a number: " + game.provideHint().join(",  ") + '.');
+    })
+
+});
