@@ -44,7 +44,7 @@ Game.prototype.playersGuessSubmission = function(number){
 }
 
 Game.prototype.checkGuess = function(){
-    if(this.playersGuess === this.winningNumber){
+    if(Number(this.playersGuess) === this.winningNumber){
         return "You Win!";
     }
     else if(this.pastGuesses.includes(this.playersGuess)){
@@ -101,7 +101,9 @@ $(function(){
         $('#textboxL').fadeIn(1250).delay(1950).fadeOut(1200);
     }
     function submit(){
+        console.log(game.winningNumber)
         var guess = game.playersGuessSubmission($('#player-input').val())
+        console.log(guess)
         $('#player-input').val("")
         if(guess !== "You have already guessed that number."){
             $('li').each(function(){
@@ -111,13 +113,13 @@ $(function(){
                 }
             })
         }
-        
-        if(Number(game.difference()) >= 25){
-            if(guess = "You Win!"){
-                penguin(guess);
-                disabled(true);
-            }
-            else if(guess === "You Lose."){
+
+        if(guess === "You Win!"){
+            penguin(guess);
+            disabled(true);
+        }
+        else if(Number(game.difference()) >= 25){
+            if(guess === "You Lose."){
                 penguin(guess + " Press the reset button to play again!");
                 disabled(true);
             }
@@ -127,11 +129,7 @@ $(function(){
             else penguin(guess + " Guess lower!")
         }
         else{
-            if(guess = "You Win!"){
-                dragon(guess);
-                disabled(true);
-            }
-            else if(guess === "You Lose."){
+            if(guess === "You Lose."){
                 dragon(guess + " Press the reset button to play again!");
                 disabled(true);
             }
