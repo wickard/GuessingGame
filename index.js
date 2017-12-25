@@ -113,7 +113,11 @@ $(function(){
         }
         
         if(Number(game.difference()) >= 25){
-            if(guess === "You Lose."){
+            if(guess = "You Win!"){
+                penguin(guess);
+                disabled(true);
+            }
+            else if(guess === "You Lose."){
                 penguin(guess + " Press the reset button to play again!");
                 disabled(true);
             }
@@ -123,7 +127,11 @@ $(function(){
             else penguin(guess + " Guess lower!")
         }
         else{
-            if(guess === "You Lose."){
+            if(guess = "You Win!"){
+                dragon(guess);
+                disabled(true);
+            }
+            else if(guess === "You Lose."){
                 dragon(guess + " Press the reset button to play again!");
                 disabled(true);
             }
