@@ -101,9 +101,7 @@ $(function(){
         $('#textboxL').fadeIn(1250).delay(1950).fadeOut(1200);
     }
     function submit(){
-        console.log(game.winningNumber)
         var guess = game.playersGuessSubmission($('#player-input').val())
-        console.log(guess)
         $('#player-input').val("")
         if(guess !== "You have already guessed that number."){
             $('li').each(function(){
